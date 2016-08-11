@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.administrator.suspendrecyclerview.MainActivity">
+
+    <Button
+        style="@style/main_button"
+        android:onClick="simpleList"
+        android:text="这是一个简单的悬浮列表"/>
+
+
+    <Button
+        style="@style/main_button"
+        android:onClick="simpPackleList"
+        android:text="这是一个封装起来的的悬浮列表"/>
+
+    <Button
+        style="@style/main_button"
+        android:onClick="simpDoubleleList"
+        android:text="这是一个双类型悬浮列表"/>
+
+    <Button
+        style="@style/main_button"
+        android:onClick="simpHeaderList"
+        android:text="这是一个可以加头部的悬浮列表"/>
+
+    <Button
+        style="@style/main_button"
+        android:onClick="simpHeaderPackList"
+        android:text="这是包装的加头部的悬浮列表"/>
+
+</LinearLayout>
