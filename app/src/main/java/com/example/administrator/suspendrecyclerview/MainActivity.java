@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 /**
- * 主类
+ * 主类...
  */
 public class MainActivity extends AppCompatActivity {
 
