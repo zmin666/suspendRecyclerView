@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.administrator.suspendrecyclerview.adapter.SuspendHeaderAdapter;
+import com.example.administrator.suspendrecyclerview.adapter.SuspendHeaderPackAdapter;
 import com.example.administrator.suspendrecyclerview.widget.SuspendHeaderPackRecyclerView;
 
 /**
@@ -27,7 +28,7 @@ public class SimpHeaderPackActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        SuspendHeaderAdapter suspendAdapter = new SuspendHeaderAdapter(this, DataUtil.getData());
+        SuspendHeaderPackAdapter suspendAdapter = new SuspendHeaderPackAdapter(this, DataUtil.getData());
         sus_recyclerview.setAdapter(suspendAdapter);
     }
 

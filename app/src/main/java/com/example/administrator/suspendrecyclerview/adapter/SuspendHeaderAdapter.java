@@ -36,7 +36,7 @@ public class SuspendHeaderAdapter extends RecyclerView.Adapter<RecyclerView.View
             View view = LayoutInflater.from(context).inflate(R.layout.layout_list_item_header, parent, false);
             return new SuppendHeaderViewHolder(view);
         } else {
-            View view = LayoutInflater.from(context).inflate(R.layout.layout_list_item, parent, false);
+            View view = LayoutInflater.from(context).inflate(R.layout.layout_list_item_1, parent, false);
             return new SuppendViewHolder(view);
         }
 

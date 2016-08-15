@@ -45,7 +45,7 @@ public class SuspendDoubleAdapter extends RecyclerView.Adapter<RecyclerView.View
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == type_1) {
-            View view = LayoutInflater.from(context).inflate(R.layout.layout_list_item, parent, false);
+            View view = LayoutInflater.from(context).inflate(R.layout.layout_list_item_1, parent, false);
             return new SuppendViewHolder(view);
         } else {
             View view = LayoutInflater.from(context).inflate(R.layout.layout_list_item_short, parent, false);
