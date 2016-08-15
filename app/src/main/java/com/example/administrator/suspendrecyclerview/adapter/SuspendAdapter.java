@@ -31,7 +31,7 @@ public class SuspendAdapter extends RecyclerView.Adapter<SuspendAdapter.SuppendV
 
     @Override
     public SuppendViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.layout_list_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.layout_list_item_1, parent, false);
         return new SuppendViewHolder(view);
     }
 

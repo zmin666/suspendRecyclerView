@@ -7,7 +7,7 @@ import java.util.List;
  * 数据获取来源类
  */
 public class DataUtil {
-    public static final int MODEL_COUNT = 60;
+    public static final int MODEL_COUNT = 34;
 
     public static List<StickyExampleModel> getData() {
         List<StickyExampleModel> stickyExampleModels = new ArrayList<>();
