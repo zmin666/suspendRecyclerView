@@ -1,5 +1,8 @@
 package com.example.administrator.suspendrecyclerview;
 
+/**
+ * model类
+ */
 public class StickyExampleModel {
   public String sticky;
   public String name;

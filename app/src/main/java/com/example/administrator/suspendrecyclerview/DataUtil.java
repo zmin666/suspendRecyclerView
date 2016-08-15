@@ -3,6 +3,9 @@ package com.example.administrator.suspendrecyclerview;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 数据获取来源类
+ */
 public class DataUtil {
     public static final int MODEL_COUNT = 60;
 

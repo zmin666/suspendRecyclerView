@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.administrator.suspendrecyclerview.adapter.SuspendAdapter;
 import com.example.administrator.suspendrecyclerview.widget.SuspendRecyclerView;
 
+/**
+ * 简单包装类
+ */
 public class SimplePackActivity extends AppCompatActivity {
     private String TAG = "MainActivity";
     private SuspendRecyclerView sus_recyclerview;

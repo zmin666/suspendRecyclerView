@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.administrator.suspendrecyclerview.adapter.SuspendHeaderAdapter;
 import com.example.administrator.suspendrecyclerview.widget.SuspendHeaderPackRecyclerView;
 
+/**
+ * 添加头布局的封装类
+ */
 public class SimpHeaderPackActivity extends AppCompatActivity {
     private String TAG = "MainActivity";
     private SuspendHeaderPackRecyclerView sus_recyclerview;

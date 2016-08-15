@@ -12,6 +12,9 @@ import android.widget.TextView;
 
 import com.example.administrator.suspendrecyclerview.adapter.SuspendHeaderAdapter;
 
+/**
+ * 简单的添加头布局
+ */
 public class SimpHeaderActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private RecyclerView rvStickyExample;
