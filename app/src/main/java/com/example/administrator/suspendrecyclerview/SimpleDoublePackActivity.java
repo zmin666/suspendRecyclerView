@@ -13,6 +13,9 @@ import com.example.administrator.suspendrecyclerview.adapter.SuspendDoubleAdapte
 
 import java.util.List;
 
+/**
+ * 两种悬浮头布局
+ */
 public class SimpleDoublePackActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private RecyclerView rvStickyExample;

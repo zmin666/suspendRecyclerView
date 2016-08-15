@@ -12,6 +12,9 @@ import android.widget.TextView;
 
 import com.example.administrator.suspendrecyclerview.adapter.SuspendAdapter;
 
+/**
+ * 最简单的
+ */
 public class SimpleActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private RecyclerView rvStickyExample;
