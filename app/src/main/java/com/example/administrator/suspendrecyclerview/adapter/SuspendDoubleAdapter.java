@@ -21,20 +21,22 @@ public class SuspendDoubleAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     private Context context;
     private List<StickyExampleModel> stickyExampleModels;
+    private int changTypePosition;
     private static final int type_1 = 1;
     private static final int type_2 = 2;
 
     public static final int HAS_STICKY_VIEW_13 = 13;
     public static final int HAS_STICKY_VIEW_23 = 23;
 
-    public SuspendDoubleAdapter(Context context, List<StickyExampleModel> stickyExampleModels) {
+    public SuspendDoubleAdapter(Context context, List<StickyExampleModel> stickyExampleModels,int changTypePosition) {
         this.context = context;
         this.stickyExampleModels = stickyExampleModels;
+        this.changTypePosition = changTypePosition;
     }
 
     @Override
     public int getItemViewType(int position) {
-        if (position <= 30) {
+        if (position < changTypePosition) {
             return type_1;
         } else {
             return type_2;

@@ -20,7 +20,7 @@ public class SimpHeaderActivity extends AppCompatActivity {
     private RecyclerView rvStickyExample;
     private TextView tvStickyHeaderView;
     private FloatingActionButton fab;
-    private String TAG = "MainActivity";
+    private String TAG = "SimpHeaderActivity";
     private int suspendViewHight;
     private int suspendWidth;
     private LinearLayoutManager linearLayoutManager;
@@ -80,7 +80,9 @@ public class SimpHeaderActivity extends AppCompatActivity {
         rvStickyExample = (RecyclerView) findViewById(R.id.rv_sticky_example);
         tvStickyHeaderView = (TextView) findViewById(R.id.tv_sticky_header_view);
         fab = (FloatingActionButton) findViewById(R.id.fab);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
+        toolbar.setTitle(TAG);
         suspendViewHight = tvStickyHeaderView.getMeasuredHeight();
         Log.i(TAG, "suspendViewHight..." + suspendViewHight);
 

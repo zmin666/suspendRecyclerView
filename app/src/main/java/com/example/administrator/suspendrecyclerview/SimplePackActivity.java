@@ -2,6 +2,7 @@ package com.example.administrator.suspendrecyclerview;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import com.example.administrator.suspendrecyclerview.adapter.SuspendAdapter;
 import com.example.administrator.suspendrecyclerview.widget.SuspendRecyclerView;
@@ -10,8 +11,9 @@ import com.example.administrator.suspendrecyclerview.widget.SuspendRecyclerView;
  * 简单包装类
  */
 public class SimplePackActivity extends AppCompatActivity {
-    private String TAG = "MainActivity";
+    private String TAG = "SimplePackActivity";
     private SuspendRecyclerView sus_recyclerview;
+    private Toolbar toolbar;
 
 
     @Override
@@ -29,5 +31,7 @@ public class SimplePackActivity extends AppCompatActivity {
 
     private void setupView() {
         sus_recyclerview = (SuspendRecyclerView) findViewById(R.id.sus_recyclerview);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(TAG);
     }
 }

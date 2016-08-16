@@ -27,6 +27,8 @@ public class SimpleDoublePackActivity extends AppCompatActivity {
     /** changeTitle type postion (this lastst posion of first Item's type) */
     private int changTypePosition = -1;
     private boolean changType = false;
+    private String TAG = "SimpleDoublePackActivity";
+    private boolean isMaybeMove;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +42,10 @@ public class SimpleDoublePackActivity extends AppCompatActivity {
         linearLayoutManager = new LinearLayoutManager(this);
         rvStickyExample.setLayoutManager(linearLayoutManager);
         List<StickyExampleModel> data = DataUtil.getData();
-        final SuspendDoubleAdapter suspendDoubleAdapter = new SuspendDoubleAdapter(this,data );
+        changTypePosition = 15;
+        final SuspendDoubleAdapter suspendDoubleAdapter = new SuspendDoubleAdapter(this,data,changTypePosition);
         rvStickyExample.setAdapter(suspendDoubleAdapter);
-        changTypePosition = 34;
+
 
         //init first supspend item
 
@@ -57,11 +60,23 @@ public class SimpleDoublePackActivity extends AppCompatActivity {
                     suspendShortViewHight = tvStickyShortHeaderView.getMeasuredHeight();
                 }
 
+                //增强判断
+                int firstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
+                int firstCompletelyVisibleItemPosition = linearLayoutManager.findFirstCompletelyVisibleItemPosition();
+                RecyclerView.ViewHolder viewHolder0 = recyclerView.findViewHolderForAdapterPosition(firstVisibleItemPosition);
+                RecyclerView.ViewHolder viewHolder1 = recyclerView.findViewHolderForAdapterPosition(firstCompletelyVisibleItemPosition);
+                if(viewHolder0.getItemViewType() == viewHolder1.getItemViewType()){
+                    Log.i("zmin.............", "..类型一致无需考虑悬浮标题滚动问题..");
+                    isMaybeMove = false;
+                }else{
+                    Log.i("zmin.............", "..类型不一致再判断悬浮标题的滚动..");
+                    isMaybeMove = true;
+                }
+
                 // init viewUnder .  important is Where to find viewUnder
                 View viewUnder = null;
-                int firstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
                 Log.i("zminsss..", "...firstVisibleItemPosition..." + firstVisibleItemPosition);
-                if (firstVisibleItemPosition <= changTypePosition) {
+                if (firstVisibleItemPosition < changTypePosition) {
                     viewUnder = recyclerView.findChildViewUnder(0, suspendViewHight + 1);
                     changType = true;
                     tvStickyShortHeaderView.setVisibility(View.INVISIBLE);
@@ -78,7 +93,7 @@ public class SimpleDoublePackActivity extends AppCompatActivity {
                         int dealtY = viewUnder.getTop() - suspendViewHight;
                         if (Math.abs(dealtY) >= suspendViewHight) {
                             tvStickyHeaderView.setTranslationY(0);
-                        } else {
+                        } else if(isMaybeMove) {
                             tvStickyHeaderView.setTranslationY(dealtY);
                         }
                     } else if ((int) viewUnder.getTag() == 23) {
@@ -89,14 +104,14 @@ public class SimpleDoublePackActivity extends AppCompatActivity {
                             if (Math.abs(dealtY) >= suspendViewHight) {
                                 tvStickyShortHeaderView.setTranslationY(0);
                                 tvStickyShortHeaderView.setVisibility(View.VISIBLE);
-                            } else {
+                            } else if(isMaybeMove){
                                 tvStickyHeaderView.setTranslationY(dealtY);
                             }
                         } else {
                             int dealtY = viewUnder.getTop() - suspendShortViewHight;
                             if (Math.abs(dealtY) >= suspendShortViewHight) {
                                 tvStickyShortHeaderView.setTranslationY(0);
-                            } else {
+                            } else if(isMaybeMove){
                                 tvStickyShortHeaderView.setTranslationY(dealtY);
                             }
                         }
@@ -123,5 +138,7 @@ public class SimpleDoublePackActivity extends AppCompatActivity {
         tvStickyHeaderView = (TextView) findViewById(R.id.tv_sticky_header_view);
         tvStickyShortHeaderView = (TextView) findViewById(R.id.tv_sticky_header_short);
         tvStickyShortHeaderView.setVisibility(View.INVISIBLE);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(TAG);
     }
 }
