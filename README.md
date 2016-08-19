@@ -1,6 +1,7 @@
 # suspendRecyclerView
 #悬浮列表
 最近研究了悬浮列表的实现方式.最后的效果图如下:
+
 ![image](https://github.com/zmin666/suspendRecyclerView/blob/master/picture_title.gif )
 
 ###基本实现原理
